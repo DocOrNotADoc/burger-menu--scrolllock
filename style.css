@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+}
+.header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0;
+  background-color: rgba(255, 255, 255, .5);
+
+  border-bottom: 1px solid #BC4749;
+}
+.logo {
+  width: 24px;
+  height: 24px;
+  margin-left: 24px;
+  background-color: #6A994E;
+  border-radius: 100%;
+}
+.burger {
+  display: none;
+  border: none;
+  background-color: transparent;
+  margin-left: auto;
+  margin-right: 24px;
+}
+.burger span {
+  display: block;
+  width: 16px;
+  height: 2px;
+  background-color: #BC4749;
+  transition: .3s;
+}
+.burger span:nth-child(2) {margin: 4px 0}
+.burger_active span {
+  margin-bottom: -2px;
+}
+.burger_active span:nth-child(1) {
+  width: 20px;
+  transform: translateY(3px) rotate(-45deg);
+}
+.burger_active span:nth-child(2) {
+  display: none;
+}
+.burger_active span:nth-child(3) {
+  width: 20px;
+  transform: translateY(3px) rotate(45deg);
+}
+.nav {
+  flex-basis: 50%;
+}
+.nav-wrapper {
+  display: flex;
+  width: 75%;
+  align-items: center;
+  justify-content: space-between;
+}
+.links-wrapper {
+  display: flex;
+  justify-content: space-around;
+  padding: 0;
+  margin: 0;
+  width: 500px;
+}
+.nav__item {
+  list-style-type: none;
+}
+.nav__item a {
+  font-size: 16px;
+  text-decoration: none;
+  color: #BC4749;
+}
+.btn {
+  max-height: 34px;
+  font-size: 16px;
+  text-decoration: none;
+  color: #BC4749;
+  margin-right: 24px;
+  padding: 7px 30px;
+  border: 1px solid #BC4749 ;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, .5);
+}
+.header_active::before {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  content: '';
+  background-color: rgba(0, 0, 0, .1);
+}
+
+@media (max-width: 991px) {
+  .burger {
+    display: block;
+  }
+  .nav-wrapper {
+    /* display: none; */
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    justify-content: space-around;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, .7);
+    width: 55%;
+    padding: 35px 0;
+    transition: .3s;
+  }
+  .header_active .nav-wrapper {
+    /* display: flex; */
+    left: 0;
+  }
+  .links-wrapper {
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    max-width:100%
+  }
+  .nav__item {
+    margin: 10px;
+  }
+  .btn {
+    margin-right: 0;
+  }
+}
+@media (max-width: 575px) {
+  .nav-wrapper {
+    width: 70%;
+  }
+}
+main {
+  background-color: #F2E8CF;
+  height: 1100px;
+}
+footer {
+  background-color: #A7C957;
+  height: 40px;
+}
